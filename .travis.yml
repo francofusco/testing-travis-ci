@@ -17,5 +17,5 @@ script:
   - cmake ..
   - make
   - ./hello
-  - ./divide 42 6
+  - ./divide 42 0
   - cppcheck --quiet --error-exitcode=1 .
