@@ -3,6 +3,10 @@ compiler: gcc
 
 before_install:
   # from the tutorial https://arne-mertz.de/2017/04/continuous-integration-travis-ci/
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+
+install:
   - sudo apt install -qq cppcheck
 
 before_script:
