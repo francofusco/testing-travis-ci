@@ -1,6 +1,10 @@
 language: cpp
 compiler: gcc
 
+before_install:
+  # from the tutorial https://arne-mertz.de/2017/04/continuous-integration-travis-ci/
+  - sudo apt install -qq cppcheck
+
 before_script:
   - mkdir build
   - cd build
@@ -10,3 +14,4 @@ script:
   - make
   - ./hello
   - ./divide 42 6
+  - cppcheck --quiet --error-exitcode=1 .
